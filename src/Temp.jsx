@@ -37,7 +37,7 @@ function Temp() {
     const url = new URL(window.location.href);
 // Get the search parameters
     const params = new URLSearchParams(url.search);
-    let res = await axios.get(`http://localhost:5000/getChart/${params.get('client')}/${params.get('days')}`)
+    let res = await axios.get(`http://mnsstrap.ddns.net:5000/getChart/${params.get('client')}/${params.get('days')}`)
     res = res.data
     let _data = []
     res = res.forEach(data=>{
