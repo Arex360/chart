@@ -68,10 +68,26 @@ function Hum() {
       <Line
               data={chartData}
               options={{
+                responsive:true,
+                maintainAspectRatio:false,
+                scales: {
+                  x: {
+                    ticks: {
+                      display: false // This will hide the x-axis labels
+                    },
+                    grid: {
+                      display: false // This will hide the x-axis grid lines
+                    }
+                  },
+                  y: {
+                    beginAtZero: true,
+                    max: 100 // Assuming battery percentage goes from 0 to 100
+                  },
+                },
                 plugins: {
                   title: {
                     display: true,
-                    text: "Humidity"
+                    text: "Battery"
                   },
                   legend: {
                     display: false
