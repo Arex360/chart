@@ -47,7 +47,7 @@ function Battery() {
     setChartData({
       labels: _data.map(data=>timeConverter(data.time)),
       datasets: [{
-        label: 'Battery: ',
+        label: 'Batterys: ',
         data: _data.map(data=>data.hum),
         borderWidth: 1  ,
       borderColor: "rgb(0, 0,0)",
@@ -64,10 +64,26 @@ function Battery() {
   },[])
 
   return (
-    <>
+    <section className='w-full h-[100vh]'>
       <Line
               data={chartData}
               options={{
+                responsive:true,
+                maintainAspectRatio:false,
+                scales: {
+                  x: {
+                    ticks: {
+                      display: false // This will hide the x-axis labels
+                    },
+                    grid: {
+                      display: false // This will hide the x-axis grid lines
+                    }
+                  },
+                  y: {
+                    beginAtZero: true,
+                    max: 100 // Assuming battery percentage goes from 0 to 100
+                  },
+                },
                 plugins: {
                   title: {
                     display: true,
@@ -79,7 +95,7 @@ function Battery() {
                 }
               }}
             />
-    </>
+    </section>
   )
 }
 
