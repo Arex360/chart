@@ -87,7 +87,7 @@ function Temp() {
                 plugins: {
                   title: {
                     display: true,
-                    text: "Battery"
+                    text: "Tempreture"
                   },
                   legend: {
                     display: false

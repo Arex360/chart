@@ -87,7 +87,7 @@ function Hum() {
                 plugins: {
                   title: {
                     display: true,
-                    text: "Battery"
+                    text: "Humidity"
                   },
                   legend: {
                     display: false
